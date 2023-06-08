@@ -7,9 +7,6 @@ describe('template spec', () => {
 describe('DemoBlaze test', () => {
   it('enter DemoBlaze', () => {
     cy.visit('')
-  })
-  
-  it('Login into DemoBlaze', ()=>{
-      cy.visit('/prod.html?idp_=2')
+    cy.get('#login2').click()
   })
 })
