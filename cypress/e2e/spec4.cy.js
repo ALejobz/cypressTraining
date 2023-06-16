@@ -10,7 +10,7 @@ describe('template spec', () => {
   })
 
   it('passes', () => {
-    cy.request({method:"GET", url:"https://pokeapi.co/api/v2/pokemon/beltran",failOnStatusCode:false })
+    cy.request({method:"GET", url:"https://pokeapi.co/api/v2/pokemon/naruto",failOnStatusCode:false })
     .its('status').should('equal', 404)
   })
 
@@ -20,7 +20,7 @@ describe('template spec', () => {
   })
 
   it('passes', () => {
-    cy.request('GET', 'https://pokeapi.co/api/v2/pokemon/'+poke)
+    cy.request({method:"GET", url:"https://pokeapi.co/api/v2/pokemon/"+poke, failOnStatusCode:false })
     .its('body.types[0].type.name').should('equal',tipe)  
   })
 
